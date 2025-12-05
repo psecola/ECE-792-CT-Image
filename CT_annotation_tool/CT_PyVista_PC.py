@@ -19,7 +19,7 @@ import Custom_CMAP
 #%%
 
 # Switch renderer to plot 3d
-matplotlib.use('TkAgg') # 'TkAgg' or 'Qt5Agg'
+matplotlib.use("Qt5Agg") # 'TkAgg' or 'Qt5Agg'
 
 # Function that assigns callbacks to buttons to Pyvista GUI for segmenting the 3D foram
 def top_buttons():
@@ -1029,6 +1029,7 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
 
 
