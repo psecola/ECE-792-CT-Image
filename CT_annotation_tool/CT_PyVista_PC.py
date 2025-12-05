@@ -2,8 +2,9 @@
 
 import sys
 
-#sys.path.append(r'C:\Users\pseco\Documents\Micro_CT_Dissertation\Proj-Forams\Foram_Micro_CT_Code\Segmentation_Code\EllipFit_EM')
-#sys.path.append(r'C:\Users\pseco\Documents\Micro_CT_Dissertation\Proj-Forams\Foram_Micro_CT_Code\Segmentation_Code\CT_annotation_tool')
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(repo_root, 'CT_annotation_tool'))
+sys.path.append(os.path.join(repo_root, 'EllipFit_EM'))
 
 import importlib
 import csv
@@ -1027,4 +1028,5 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
