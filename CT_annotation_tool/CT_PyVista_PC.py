@@ -1,4 +1,7 @@
 #%%
+import matplotlib
+# Switch renderer to plot 3d
+matplotlib.use("Qt5Agg") # 'TkAgg' or 'Qt5Agg'
 
 import sys
 import os
@@ -9,7 +12,6 @@ sys.path.append(os.path.join(repo_root, 'EllipFit_EM'))
 
 import importlib
 import csv
-import matplotlib
 import pyvista as pv
 from CT_Import_Helper_PC import *
 from pv_helper_PC import *
@@ -18,8 +20,7 @@ import Custom_CMAP
 
 #%%
 
-# Switch renderer to plot 3d
-matplotlib.use("Qt5Agg") # 'TkAgg' or 'Qt5Agg'
+
 
 # Function that assigns callbacks to buttons to Pyvista GUI for segmenting the 3D foram
 def top_buttons():
@@ -1029,6 +1030,7 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
 
 
