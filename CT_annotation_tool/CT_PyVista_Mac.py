@@ -1,6 +1,7 @@
 #%%
 
 import sys
+import os
 
 repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(os.path.join(repo_root, 'CT_annotation_tool'))
@@ -1030,5 +1031,6 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
 
