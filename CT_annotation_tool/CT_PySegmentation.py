@@ -1,5 +1,6 @@
 #%%
 import matplotlib
+matplotlib.use('Qt5Agg') # or 'Qt5Agg'
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import ImageGrid
 from matplotlib.widgets import PolygonSelector
@@ -11,7 +12,7 @@ from PIL import Image, ImageDraw
 import copy
 
 
-matplotlib.use('TkAgg') # or 'Qt5Agg'
+
 
 
 '''
@@ -263,6 +264,7 @@ def mask_ct_vol(masks_dict : dict, dataset_name : str,  threshold : int, ct_stac
 
     else:
         ct_mask = np.where(combined3d_mask, ct_stack, 0)
+
 
 
     return ct_mask
