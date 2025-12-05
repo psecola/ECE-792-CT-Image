@@ -11,8 +11,8 @@ import importlib
 import csv
 import matplotlib
 import pyvista as pv
-from CT_annotation_tool.CT_Import_Helper_PC import *
-from CT_annotation_tool.pv_helper_PC import *
+from CT_Import_Helper_PC import *
+from pv_helper_PC import *
 from EllipFit_EM.ellipsoid_fitting import *
 import Custom_CMAP
 
@@ -1029,6 +1029,7 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
 
 
