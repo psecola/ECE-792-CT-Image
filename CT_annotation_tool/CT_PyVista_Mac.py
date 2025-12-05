@@ -1,4 +1,7 @@
 #%%
+import matplotlib
+# Switch renderer to plot 3d
+matplotlib.use("Qt5Agg") # 'TkAgg' or 'Qt5Agg'
 
 import sys
 import os
@@ -9,7 +12,6 @@ sys.path.append(os.path.join(repo_root, 'EllipFit_EM'))
 
 import importlib
 import csv
-import matplotlib
 import pyvista as pv
 from CT_Import_Helper_Mac import *
 from pv_helper_Mac import *
@@ -1031,6 +1033,7 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
 
 
