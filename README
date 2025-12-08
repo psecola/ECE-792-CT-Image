@@ -6,4 +6,4 @@ This tool allows the user to visualize and annotate 3D representations of object
 
 Programs that will need to be installed and configured: <br/>
 Docker Desktop for Windows <br/>
-  - enabled WSL Integration for Ubuntu in Docker Desktop
+  - enabled WSL (Windows Subsystem for Linux) Integration for Ubuntu in Docker Desktop
