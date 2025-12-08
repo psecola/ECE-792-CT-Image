@@ -1,1 +1,9 @@
+Welcome to the CT Image analyzer tool
 
+About the tool
+
+This tool allows the user to visualize and annotate 3D representations of objects that have been scanned into one or more .tif files. Unfortunately at this time (12/8) this system has only been tested on Windows systems. Future instructions will be written for Mac OS and Linux OS.
+
+Programs that will need to be installed and configured: <br/>
+Docker Desktop for Windows <br/>
+  - enabled WSL Integration for Ubuntu in Docker Desktop
