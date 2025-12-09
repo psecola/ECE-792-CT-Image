@@ -1,4 +1,4 @@
-**Welcome to the CT Image analyzer tool**
+**Welcome to the CT Image Analyzer Tool**
 
 **About the tool**
 
@@ -12,6 +12,8 @@ Unfortunately at this time (12/8) this system has only been tested on Windows sy
 1.) Ubuntu (for windows) <br/>
 2.) Docker Desktop for Windows <br/>
   - Enable WSL (Windows Subsystem for Linux) Integration for Ubuntu in Docker Desktop <br/>
+3.) Download the .tar file using the link and place into folder where you are also storing the CT scan folder (**do not place in the CT scan folder**) <br/>
+  link: https://drive.google.com/file/d/122BWNoXRgzlcwBDFC5mGppa-EUZdASNJ/view?usp=sharing
 
 **Quick Start Guide** <br/>
 1.) Open Docker Desktop <br/>
