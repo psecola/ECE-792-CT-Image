@@ -31,13 +31,15 @@ output:
 
 def get_tiff_metadata(directory_path):
     # Specify file type
-    file_pattern = '*.tiff'
+    pattern1 = "*.tif"
+    pattern2 = "*.tiff"
 
-    # Extract metadata
-    file_paths = glob.glob(os.path.join(directory_path, file_pattern))
+    file_paths = glob.glob(os.path.join(directory_path, pattern1)) + \
+                 glob.glob(os.path.join(directory_path, pattern2))
     N = len(file_paths)
 
     # Extract resolution of first .tiff tile
+
     reader = vtk.vtkTIFFReader()
     reader.SetFileName(file_paths[0])
     reader.Update()
@@ -47,6 +49,10 @@ def get_tiff_metadata(directory_path):
     tiff_res[-1] = N - 1
 
     tiff_stack = np.array([tf.imread(file) for file in file_paths], dtype=np.int64)
+
+    if tiff_stack.ndim == 4:
+        # Drop the first dimension (e.g., batch size 1)
+        tiff_stack = tiff_stack[0]
 
     return tiff_stack, N, tuple(tiff_res)
 
@@ -128,6 +134,7 @@ output:
 
 
 def average_pool(tensor, k_size, stride):
+
     # Turns numpy array into tensor
     tensor = torch.from_numpy(tensor)
 
@@ -135,7 +142,8 @@ def average_pool(tensor, k_size, stride):
     if tensor.ndim == 3:
         tensor = tensor.unsqueeze(0)
 
-    # Define pooling function using inputes
+
+    # Define pooling function using inputs
     pool_func = torch.nn.AvgPool3d(kernel_size=k_size, stride=stride)
     # pool_func = torch.nn.AvgPool2d(kernel_size=2)
 
@@ -185,6 +193,7 @@ def import_tiff(directory_path=None, condense=False, im_pooling=False, kernel_si
     start_time = time.perf_counter()
     # function being timed
     tiff_stack, N, tiff_res = get_tiff_metadata(directory_path)
+
     # Set tiff_stack to be condensed_stack, so code runs
     condensed_stack = tiff_stack
     end_time = time.perf_counter()
@@ -205,7 +214,6 @@ def import_tiff(directory_path=None, condense=False, im_pooling=False, kernel_si
         plt.show()
 
     if condense:
-
         if threshold is None:
             # Preprocess tiff_stack to condense tensor and eliminate any unnecessary pixels (turns them to 0)
             start_time = time.perf_counter()
@@ -365,8 +373,8 @@ def foram_import():
 
                 show_info_message_pc("CT scan import complete")
 
-            except Exception:
-                show_info_message_pc("An error occurred. Please ensure correct CT directory was entered")
+            except Exception as e:
+                show_info_message_pc(f"An error occurred {e}. Please ensure correct CT directory was entered")
 
 
         except Exception as e:

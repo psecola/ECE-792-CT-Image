@@ -31,10 +31,11 @@ output:
 
 def get_tiff_metadata(directory_path):
     # Specify file type
-    file_pattern = '*.tiff'
+    pattern1 = "*.tif"
+    pattern2 = "*.tiff"
 
-    # Extract metadata
-    file_paths = glob.glob(os.path.join(directory_path, file_pattern))
+    file_paths= glob.glob(os.path.join(directory_path, pattern1)) + \
+                 glob.glob(os.path.join(directory_path, pattern2))
     N = len(file_paths)
 
     # Extract resolution of first .tiff tile
@@ -47,6 +48,10 @@ def get_tiff_metadata(directory_path):
     tiff_res[-1] = N - 1
 
     tiff_stack = np.array([tf.imread(file) for file in file_paths], dtype=np.int64)
+
+    if tiff_stack.ndim == 4:
+        # Drop the first dimension (e.g., batch size 1)
+        tiff_stack = tiff_stack[0]
 
     return tiff_stack, N, tuple(tiff_res)
 
