@@ -34,8 +34,17 @@ sudo apt update
 sudo apt install x11-apps
 ```
 <br/>
+4.) Change directory and load the docker image into Ubuntu (change [username] and [folder]): <br/>
 
-4.) to run docker image use the following code: <br/>
+```
+cp /mnt/c/Users/[username]/Documents/[folder]/ct_pyvista.tar ~/
+cd ~
+docker load -i ct_pyvista.tar
+```
+
+You should see the message: **Loaded image: ct_pyvista:latest**
+
+5.) to run docker image use the following code: <br/>
 ```
 docker run -it \
     -e DISPLAY=$DISPLAY \
