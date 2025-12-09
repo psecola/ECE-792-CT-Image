@@ -16,19 +16,19 @@ Unfortunately at this time (12/8) this system has only been tested on Windows sy
 **Perpare <br/>
 1.) Open Docker Desktop
 2.) Open Microsoft Powershell. To confirm you are using WSL 2 run the following code <br/>
-'''wsl -l -v'''
+```wsl -l -v```
 
 You should see that Ubuntu is running version 2. If not run the following code: <br/>
-'''wsl --set-version Ubuntu 2'''
+```wsl --set-version Ubuntu 2```
 2.) Open Ubuntu terminal
 3.) 
 
 Run 
-'''docker run -it \
+```docker run -it \
     -e DISPLAY=$DISPLAY \
     -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY \
     -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
     -e PULSE_SERVER=$PULSE_SERVER \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     ct_pyvista
-'''
+```
