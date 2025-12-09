@@ -44,7 +44,7 @@ docker load -i ct_pyvista.tar
 
 You should see the message: **Loaded image: ct_pyvista:latest**
 
-5.) to run docker image use the following code: <br/>
+5.) To run docker image use the following code: <br/>
 ```
 docker run -it \
     -e DISPLAY=$DISPLAY \
@@ -54,3 +54,8 @@ docker run -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     ct_pyvista
 ```
+6.) Insert the folder path where your CT images into the first initial popup -> Answer Y/N if you have metadata file about the CT information (necessary for gathering real-world measurements of annotations) -> If you do have this file then provide the path to the document and ensure if follows the format given below <br/>
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/eff79e7f-1ed4-4270-a1e9-32232fcb0c3b" /> <br/>
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/78442d05-9f72-4879-814e-53b2b1b60aa4" />
+
+
