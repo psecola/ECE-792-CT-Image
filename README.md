@@ -13,7 +13,7 @@ Unfortunately at this time (12/8) this system has only been tested on Windows sy
 2.) Docker Desktop for Windows <br/>
   - Enable WSL (Windows Subsystem for Linux) Integration for Ubuntu in Docker Desktop <br/>
 
-**Perpare** <br/>
+**Quick Start Guide** <br/>
 1.) Open Docker Desktop <br/>
 2.) Open Microsoft Powershell. To confirm you are using WSL 2 run the following code <br/>
 ```
@@ -56,6 +56,15 @@ docker run -it \
 ```
 6.) Insert the folder path where your CT images into the first initial popup -> Answer Y/N if you have metadata file about the CT information (necessary for gathering real-world measurements of annotations) -> If you do have this file then provide the path to the document and ensure if follows the format given below <br/>
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/eff79e7f-1ed4-4270-a1e9-32232fcb0c3b" /> <br/>
-<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/78442d05-9f72-4879-814e-53b2b1b60aa4" />
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/78442d05-9f72-4879-814e-53b2b1b60aa4" /> <br/>
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/b99ab198-c38f-49f0-a022-4cde8c20adb3" /> <br/>
+
+7.) Explore and Annotate!<br/>
+
+
+Metadata file format (must be .txt file):
+
+
+
 
 
