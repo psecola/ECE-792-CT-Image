@@ -976,7 +976,7 @@ def re_render(state):
 #%%
 # V3 (Working)
 directory, tiff_stack, N, tiff_res, condensed_stack, metadata, scale_xyz, RW_pixel_size = foram_import()
-print(tiff_stack.shape)
+
 del tiff_stack # This is to reduce memory requirements
 
 #%%
@@ -1030,6 +1030,7 @@ pyrender(grid)
 
 # Display plot
 plotter.show()
+
 
 
 
