@@ -62,7 +62,9 @@ docker run -it \
 7.) Explore and Annotate!<br/>
 
 
-Metadata file format (must be .txt file):
+Metadata file format (must be .txt file): <br/>
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/1f6e6820-ef3a-4fba-b73a-35b89d576f55" />
+
 
 
 
